@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Commentary Checklist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-logo">&#9673;</span>
+        <span class="sidebar-title">Site Checklist</span>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">&#9776;</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#s1" class="nav-item" data-section="1"><span class="nav-num">1</span> Site Overview</a>
+        <a href="#s2" class="nav-item" data-section="2"><span class="nav-num">2</span> Executive Summary</a>
+        <a href="#s3" class="nav-item" data-section="3"><span class="nav-num">3</span> Trade Area &amp; Map</a>
+        <a href="#s4" class="nav-item" data-section="4"><span class="nav-num">4</span> Traffic &amp; Access</a>
+        <a href="#s5" class="nav-item" data-section="5"><span class="nav-num">5</span> Customer Behavior</a>
+        <a href="#s6" class="nav-item" data-section="6"><span class="nav-num">6</span> Operational Efficiency</a>
+        <a href="#s7" class="nav-item" data-section="7"><span class="nav-num">7</span> Drive-Thru Performance</a>
+        <a href="#s8" class="nav-item" data-section="8"><span class="nav-num">8</span> Infrastructure</a>
+        <a href="#s9" class="nav-item" data-section="9"><span class="nav-num">9</span> Security &amp; Risk</a>
+        <a href="#s10" class="nav-item" data-section="10"><span class="nav-num">10</span> Competitive Impact</a>
+        <a href="#s11" class="nav-item" data-section="11"><span class="nav-num">11</span> Risks &amp; Gaps</a>
+        <a href="#s12" class="nav-item" data-section="12"><span class="nav-num">12</span> Recommendations</a>
+        <a href="#s13" class="nav-item" data-section="13"><span class="nav-num">13</span> Dependencies</a>
+        <a href="#s14" class="nav-item" data-section="14"><span class="nav-num">14</span> Open Questions</a>
+        <a href="#s15" class="nav-item" data-section="15"><span class="nav-num">15</span> Final Recommendation</a>
+      </nav>
+      <div class="sidebar-actions">
+        <button class="btn btn-outline" id="clearBtn">Clear All</button>
+        <button class="btn btn-primary" id="printBtn">&#128438; Export PDF</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+
+      <header class="top-bar">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+        <h1 class="page-title">New Site Commentary <span class="badge">Fast Food / Coffee</span></h1>
+        <div class="autosave-indicator" id="autosaveIndicator">Saved</div>
+      </header>
+
+      <div class="form-container">
+
+        <!-- Section 1: Site Overview -->
+        <section class="form-section" id="s1">
+          <div class="section-header">
+            <span class="section-num">1</span>
+            <h2>Site Overview</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Site Name</label>
+              <input type="text" data-key="s1_siteName" placeholder="e.g. Downtown Corner Unit" />
+            </div>
+            <div class="field-group">
+              <label>Address / Location</label>
+              <input type="text" data-key="s1_address" placeholder="Full street address" />
+            </div>
+            <div class="field-group">
+              <label>Assessment Date</label>
+              <input type="date" data-key="s1_date" />
+            </div>
+            <div class="field-group">
+              <label>Assessed By</label>
+              <input type="text" data-key="s1_assessedBy" placeholder="Your name / team" />
+            </div>
+            <div class="field-group">
+              <label>Site Type</label>
+              <select data-key="s1_siteType">
+                <option value="">Select type…</option>
+                <option>Drive-thru</option>
+                <option>Walk-in</option>
+                <option>Hybrid</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Primary Purpose</label>
+              <input type="text" data-key="s1_purpose" placeholder="e.g. Quick-service coffee" />
+            </div>
+            <div class="field-group full-width">
+              <label>Key Stakeholders</label>
+              <textarea data-key="s1_stakeholders" rows="3" placeholder="List key stakeholders involved…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Site Photos</label>
+            <div class="drop-zone" data-photo-key="s1_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+              <p class="drop-hint">PNG, JPG, WEBP supported</p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s1_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 2: Executive Summary -->
+        <section class="form-section" id="s2">
+          <div class="section-header">
+            <span class="section-num">2</span>
+            <h2>Executive Summary</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Overall Readiness Level</label>
+              <select data-key="s2_readiness">
+                <option value="">Select…</option>
+                <option>High – Ready to launch</option>
+                <option>Medium – Minor gaps</option>
+                <option>Low – Significant work needed</option>
+              </select>
+            </div>
+            <div class="field-group full-width">
+              <label>Key Strengths</label>
+              <textarea data-key="s2_strengths" rows="3" placeholder="Top 3–5 strengths…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Major Risks</label>
+              <textarea data-key="s2_risks" rows="3" placeholder="Top risks identified…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Competitive Positioning</label>
+              <textarea data-key="s2_positioning" rows="3" placeholder="How this site stands vs competitors…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Recommendation</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="s2_recommendation" data-key="s2_recommendation" value="Go" /> <span class="radio-badge go">Go</span></label>
+                <label class="radio-label"><input type="radio" name="s2_recommendation" data-key="s2_recommendation" value="No-Go" /> <span class="radio-badge nogo">No-Go</span></label>
+                <label class="radio-label"><input type="radio" name="s2_recommendation" data-key="s2_recommendation" value="Conditional" /> <span class="radio-badge conditional">Conditional</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Supporting Photos</label>
+            <div class="drop-zone" data-photo-key="s2_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s2_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 3: Trade Area & Map Radius -->
+        <section class="form-section" id="s3">
+          <div class="section-header">
+            <span class="section-num">3</span>
+            <h2>Trade Area &amp; Map Radius Analysis</h2>
+          </div>
+          <h3 class="sub-heading">A. Radius Definition</h3>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Primary Radius Used</label>
+              <select data-key="s3_radius">
+                <option value="">Select…</option>
+                <option>0.25 miles</option>
+                <option>0.5 miles</option>
+                <option>1 mile</option>
+                <option>2 miles</option>
+              </select>
+            </div>
+          </div>
+          <h3 class="sub-heading">B. Key Demand Drivers</h3>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Residential Density</label>
+              <input type="text" data-key="s3_residential" placeholder="e.g. High-density apartments nearby" />
+            </div>
+            <div class="field-group">
+              <label>Office / Commuter Traffic</label>
+              <input type="text" data-key="s3_office" placeholder="e.g. Major office park 0.3 mi" />
+            </div>
+            <div class="field-group">
+              <label>Schools / Institutions</label>
+              <input type="text" data-key="s3_schools" placeholder="e.g. University campus 0.5 mi" />
+            </div>
+            <div class="field-group">
+              <label>Transit / Highways</label>
+              <input type="text" data-key="s3_transit" placeholder="e.g. Bus stop on corner, I-95 exit" />
+            </div>
+          </div>
+          <h3 class="sub-heading">C. Competitive Landscape</h3>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Nearby Competitors</label>
+              <textarea data-key="s3_competitors" rows="3" placeholder="List name, distance, type…"></textarea>
+            </div>
+            <div class="field-group">
+              <label>Saturation Level</label>
+              <select data-key="s3_saturation">
+                <option value="">Select…</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+              </select>
+            </div>
+            <div class="field-group full-width">
+              <label>Market Gaps</label>
+              <textarea data-key="s3_gaps" rows="2" placeholder="Unmet demand or underserved segments…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Overlap vs Differentiation</label>
+              <textarea data-key="s3_overlap" rows="2" placeholder="How this site differs from or overlaps with competitors…"></textarea>
+            </div>
+          </div>
+          <h3 class="sub-heading">D. Insight</h3>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Demand Capture Summary</label>
+              <textarea data-key="s3_insight" rows="3" placeholder="Does the site capture new demand or compete for existing traffic?"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Map / Aerial Photos</label>
+            <div class="drop-zone" data-photo-key="s3_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s3_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 4: Traffic Flow & Accessibility -->
+        <section class="form-section" id="s4">
+          <div class="section-header">
+            <span class="section-num">4</span>
+            <h2>Traffic Flow &amp; Accessibility</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Peak Traffic Patterns</label>
+              <textarea data-key="s4_peakTraffic" rows="2" placeholder="Times and days of peak traffic…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Entry / Exit Ease</label>
+              <textarea data-key="s4_entryExit" rows="2" placeholder="Describe ease of access for vehicles and pedestrians…"></textarea>
+            </div>
+            <div class="field-group">
+              <label>Visibility from Road</label>
+              <select data-key="s4_visibility">
+                <option value="">Select…</option>
+                <option>Excellent</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+              </select>
+            </div>
+            <div class="field-group full-width">
+              <label>Pedestrian vs Vehicle Traffic</label>
+              <textarea data-key="s4_pedVsVehicle" rows="2" placeholder="Breakdown of foot traffic vs drive-up…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Bottlenecks or Congestion Points</label>
+              <textarea data-key="s4_bottlenecks" rows="2" placeholder="Any choke points or problem areas…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Traffic / Access Photos</label>
+            <div class="drop-zone" data-photo-key="s4_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s4_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 5: Customer Behavior -->
+        <section class="form-section" id="s5">
+          <div class="section-header">
+            <span class="section-num">5</span>
+            <h2>Customer Behavior &amp; Volume Patterns</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Peak Hours Observed</label>
+              <input type="text" data-key="s5_peakHours" placeholder="e.g. 7–9 AM, 12–1 PM" />
+            </div>
+            <div class="field-group">
+              <label>Customer Dwell Time</label>
+              <input type="text" data-key="s5_dwellTime" placeholder="e.g. Avg 8 min" />
+            </div>
+            <div class="field-group">
+              <label>Walk-in vs Drive-thru Ratio</label>
+              <input type="text" data-key="s5_walkinRatio" placeholder="e.g. 60% walk-in / 40% drive-thru" />
+            </div>
+            <div class="field-group">
+              <label>Mobile Order Usage</label>
+              <select data-key="s5_mobileOrder">
+                <option value="">Select…</option>
+                <option>High (&gt;30%)</option>
+                <option>Medium (15–30%)</option>
+                <option>Low (&lt;15%)</option>
+                <option>Unknown</option>
+              </select>
+            </div>
+            <div class="field-group full-width">
+              <label>Observed Congestion Points</label>
+              <textarea data-key="s5_congestion" rows="2" placeholder="Where and when congestion was observed…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Customer Flow Photos</label>
+            <div class="drop-zone" data-photo-key="s5_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s5_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 6: Operational Efficiency -->
+        <section class="form-section" id="s6">
+          <div class="section-header">
+            <span class="section-num">6</span>
+            <h2>Operational Efficiency</h2>
+          </div>
+          <h3 class="sub-heading">A. Layout &amp; Flow</h3>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Order → Prep → Pickup Flow</label>
+              <textarea data-key="s6_orderFlow" rows="2" placeholder="Describe the customer journey through the store…"></textarea>
+            </div>
+            <div class="field-group">
+              <label>Distance Between Stations</label>
+              <input type="text" data-key="s6_stationDistance" placeholder="e.g. Order to prep: 12 ft" />
+            </div>
+            <div class="field-group full-width">
+              <label>Staff Movement Efficiency</label>
+              <textarea data-key="s6_staffMovement" rows="2" placeholder="Observations on how staff navigate the space…"></textarea>
+            </div>
+          </div>
+          <h3 class="sub-heading">B. Staff Execution</h3>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Role Clarity</label>
+              <textarea data-key="s6_roleClarity" rows="2" placeholder="Are roles clearly defined?…"></textarea>
+            </div>
+            <div class="field-group">
+              <label>Throughput During Rush</label>
+              <input type="text" data-key="s6_throughput" placeholder="e.g. ~80 customers/hr" />
+            </div>
+            <div class="field-group full-width">
+              <label>Bottlenecks</label>
+              <textarea data-key="s6_bottlenecks" rows="2" placeholder="Where does the operation slow down?…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Layout / Operations Photos</label>
+            <div class="drop-zone" data-photo-key="s6_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s6_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 7: Drive-Thru Performance -->
+        <section class="form-section" id="s7">
+          <div class="section-header">
+            <span class="section-num">7</span>
+            <h2>Drive-Thru Performance</h2>
+            <span class="optional-tag">if applicable</span>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Line Length During Peak</label>
+              <input type="text" data-key="s7_lineLength" placeholder="e.g. 8–12 cars" />
+            </div>
+            <div class="field-group">
+              <label>Throughput Speed</label>
+              <input type="text" data-key="s7_throughputSpeed" placeholder="e.g. ~3 min avg service time" />
+            </div>
+            <div class="field-group full-width">
+              <label>Impact on Parking / Traffic</label>
+              <textarea data-key="s7_parkingImpact" rows="2" placeholder="Does the drive-thru queue spill into parking or street?…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Priority Handling vs In-Store</label>
+              <textarea data-key="s7_priority" rows="2" placeholder="How is drive-thru vs walk-in prioritized?…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Drive-Thru Photos</label>
+            <div class="drop-zone" data-photo-key="s7_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s7_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 8: Infrastructure -->
+        <section class="form-section" id="s8">
+          <div class="section-header">
+            <span class="section-num">8</span>
+            <h2>Infrastructure &amp; Readiness</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Power / Utilities</label>
+              <select data-key="s8_power">
+                <option value="">Select…</option>
+                <option>Adequate</option>
+                <option>Needs upgrade</option>
+                <option>Critical issue</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Network Connectivity</label>
+              <select data-key="s8_network">
+                <option value="">Select…</option>
+                <option>Adequate</option>
+                <option>Needs upgrade</option>
+                <option>Critical issue</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Equipment Capacity</label>
+              <select data-key="s8_equipment">
+                <option value="">Select…</option>
+                <option>Adequate</option>
+                <option>Needs upgrade</option>
+                <option>Critical issue</option>
+              </select>
+            </div>
+            <div class="field-group full-width">
+              <label>Space Constraints</label>
+              <textarea data-key="s8_space" rows="2" placeholder="Any limitations in available space…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Environmental Conditions</label>
+              <textarea data-key="s8_environment" rows="2" placeholder="Temperature, noise, weather exposure, etc.…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Infrastructure Photos</label>
+            <div class="drop-zone" data-photo-key="s8_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s8_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 9: Security & Risk -->
+        <section class="form-section" id="s9">
+          <div class="section-header">
+            <span class="section-num">9</span>
+            <h2>Security &amp; Risk Factors</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group">
+              <label>Access Control</label>
+              <select data-key="s9_accessControl">
+                <option value="">Select…</option>
+                <option>Strong</option>
+                <option>Adequate</option>
+                <option>Weak</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Visibility / Lighting</label>
+              <select data-key="s9_lighting">
+                <option value="">Select…</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>Poor</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Surveillance Presence</label>
+              <select data-key="s9_surveillance">
+                <option value="">Select…</option>
+                <option>Comprehensive</option>
+                <option>Partial</option>
+                <option>None</option>
+              </select>
+            </div>
+            <div class="field-group full-width">
+              <label>Risk Points (blind spots, loitering, etc.)</label>
+              <textarea data-key="s9_riskPoints" rows="3" placeholder="Identify specific risk areas and concerns…"></textarea>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Security / Risk Photos</label>
+            <div class="drop-zone" data-photo-key="s9_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s9_photos"></div>
+          </div>
+        </section>
+
+        <!-- Section 10: Competitive Impact -->
+        <section class="form-section" id="s10">
+          <div class="section-header">
+            <span class="section-num">10</span>
+            <h2>Competitive Impact</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Nearby Competitors</label>
+              <textarea data-key="s10_competitors" rows="2" placeholder="Name each competitor…"></textarea>
+            </div>
+            <div class="field-group">
+              <label>Distance and Overlap</label>
+              <input type="text" data-key="s10_distance" placeholder="e.g. 0.2 mi — same menu" />
+            </div>
+            <div class="field-group">
+              <label>Cannibalization Risk</label>
+              <select data-key="s10_cannibalization">
+                <option value="">Select…</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Strength of Competition</label>
+              <select data-key="s10_compStrength">
+                <option value="">Select…</option>
+                <option>Strong</option>
+                <option>Moderate</option>
+                <option>Weak</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Overall Impact</label>
+              <select data-key="s10_overallImpact">
+                <option value="">Select…</option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 11: Risks & Gaps Table -->
+        <section class="form-section" id="s11">
+          <div class="section-header">
+            <span class="section-num">11</span>
+            <h2>Risks &amp; Gaps</h2>
+          </div>
+          <div class="risk-table-wrapper">
+            <table class="risk-table" id="riskTable">
+              <thead>
+                <tr>
+                  <th>Risk</th>
+                  <th>Impact</th>
+                  <th>Likelihood</th>
+                  <th>Priority</th>
+                  <th>Notes</th>
+                  <th class="no-print"></th>
+                </tr>
+              </thead>
+              <tbody id="riskTableBody"></tbody>
+            </table>
+            <button class="btn btn-outline add-row-btn no-print" id="addRiskRow">+ Add Risk</button>
+          </div>
+        </section>
+
+        <!-- Section 12: Recommendations -->
+        <section class="form-section" id="s12">
+          <div class="section-header">
+            <span class="section-num">12</span>
+            <h2>Recommendations</h2>
+          </div>
+          <div class="rec-block">
+            <div class="rec-header high">High Priority <span class="rec-tag">Must Fix Before Launch</span></div>
+            <div class="rec-items" id="recHigh" data-key="s12_high"></div>
+            <button class="btn btn-sm no-print" data-add-rec="high">+ Add Item</button>
+          </div>
+          <div class="rec-block">
+            <div class="rec-header medium">Medium Priority</div>
+            <div class="rec-items" id="recMedium" data-key="s12_medium"></div>
+            <button class="btn btn-sm no-print" data-add-rec="medium">+ Add Item</button>
+          </div>
+          <div class="rec-block">
+            <div class="rec-header low">Low Priority</div>
+            <div class="rec-items" id="recLow" data-key="s12_low"></div>
+            <button class="btn btn-sm no-print" data-add-rec="low">+ Add Item</button>
+          </div>
+        </section>
+
+        <!-- Section 13: Dependencies -->
+        <section class="form-section" id="s13">
+          <div class="section-header">
+            <span class="section-num">13</span>
+            <h2>Dependencies</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Internal Teams</label>
+              <textarea data-key="s13_internal" rows="2" placeholder="Which internal teams are required?…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>External Vendors</label>
+              <textarea data-key="s13_external" rows="2" placeholder="Third-party vendors or contractors needed…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Technology Dependencies</label>
+              <textarea data-key="s13_tech" rows="2" placeholder="Systems, integrations, or tech required…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Timeline Constraints</label>
+              <textarea data-key="s13_timeline" rows="2" placeholder="Hard deadlines or sequencing requirements…"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 14: Open Questions -->
+        <section class="form-section" id="s14">
+          <div class="section-header">
+            <span class="section-num">14</span>
+            <h2>Open Questions</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>What is unknown or needs validation?</label>
+              <textarea data-key="s14_questions" rows="6" placeholder="List each open question…&#10;- &#10;- &#10;- "></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 15: Final Recommendation -->
+        <section class="form-section" id="s15">
+          <div class="section-header">
+            <span class="section-num">15</span>
+            <h2>Final Recommendation</h2>
+          </div>
+          <div class="fields-grid">
+            <div class="field-group full-width">
+              <label>Executive Conclusion</label>
+              <textarea data-key="s15_conclusion" rows="6" placeholder="Clear executive-level conclusion summarizing readiness and next steps…"></textarea>
+            </div>
+            <div class="field-group full-width">
+              <label>Final Decision</label>
+              <div class="radio-group large">
+                <label class="radio-label"><input type="radio" name="s15_decision" data-key="s15_decision" value="Go" /> <span class="radio-badge go">Go</span></label>
+                <label class="radio-label"><input type="radio" name="s15_decision" data-key="s15_decision" value="No-Go" /> <span class="radio-badge nogo">No-Go</span></label>
+                <label class="radio-label"><input type="radio" name="s15_decision" data-key="s15_decision" value="Conditional" /> <span class="radio-badge conditional">Conditional</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="photo-upload-area">
+            <label class="photo-label">Final / Summary Photos</label>
+            <div class="drop-zone" data-photo-key="s15_photos">
+              <span class="drop-icon">&#128247;</span>
+              <p>Drop images here or <label class="file-link">browse<input type="file" accept="image/*" multiple class="file-input" /></label></p>
+            </div>
+            <div class="photo-grid" data-photo-grid="s15_photos"></div>
+          </div>
+        </section>
+
+      </div><!-- /form-container -->
+    </main>
+  </div><!-- /app-layout -->
+
+  <div class="modal-overlay" id="clearModal">
+    <div class="modal">
+      <h3>Clear all data?</h3>
+      <p>This will permanently delete all filled-in data and uploaded photos from this browser.</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancelClear">Cancel</button>
+        <button class="btn btn-danger" id="confirmClear">Yes, clear all</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
